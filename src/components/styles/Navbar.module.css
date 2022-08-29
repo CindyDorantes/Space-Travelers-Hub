@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+:root {
+  --azure: #0290ff;
+}
+
+.navbarCont {
+  display: flex;
+  height: 5.938rem;
+  width: 100vw;
+  border: none;
+  background-color: #fff;
+}
+
+.navHeader {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 2px);
+  border: solid 1px var(--white);
+  padding: 1.75rem 4.75rem;
+  background-color: #fff;
+}
+
+.navTitle {
+  height: 2.313rem;
+  margin: 0 1.5rem;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--azure);
+  background: inherit;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  background: inherit;
+}
+
+.navLink {
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 1.5rem;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  text-decoration: none;
+  color: #121212;
+  background: inherit;
+}
+
+.navLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
