@@ -42,16 +42,20 @@
   line-height: normal;
   letter-spacing: normal;
   color: var(--azure);
-  background: inherit;
 }
 
 .navBar {
   display: flex;
   align-items: center;
-  background: inherit;
 }
 
-.navLink {
+.navBar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navBar a {
+  text-decoration: none;
   width: 3.688rem;
   height: 1rem;
   margin: 1.125rem 1.5rem;
@@ -61,12 +65,14 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.9px;
-  text-decoration: none;
   color: #121212;
-  background: inherit;
 }
 
-.navLink:hover {
-  cursor: pointer;
+.navBar li:hover {
+  font-weight: bold;
   text-decoration: underline;
+}
+
+.navBar li.activeLink {
+  text-decoration: underline !important;
 }
