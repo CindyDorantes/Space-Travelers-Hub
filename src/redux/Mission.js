@@ -22,7 +22,7 @@ export const leaveMission = (id) => ({
 export const fetchMission = async (dispatch) => {
   const response = await fetch(URL);
   const missions = await response.json();
-  console.log(missions);
+  //   console.log(missions);
 
   dispatch(
     loadMission(
@@ -52,20 +52,20 @@ const missionReducer = (state = [], action) => {
         };
       });
 
-      case LEAVEMISSION:
-        return state.map((mission) => {
-          if (mission.id !== action.id) {
-            return mission;
-          }
+    case LEAVEMISSION:
+      return state.map((mission) => {
+        if (mission.id !== action.id) {
+          return mission;
+        }
 
-          return {
-            ...mission,
-            reserved: false,
-          };
-        });
+        return {
+          ...mission,
+          reserved: false,
+        };
+      });
 
-      default:
-        return state;
+    default:
+      return state;
   }
 };
 
