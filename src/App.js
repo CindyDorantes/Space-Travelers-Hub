@@ -1,8 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import MyProfile from './components/My-Profile';
 
 class App extends React.Component {
   render() {
@@ -11,8 +12,10 @@ class App extends React.Component {
         <Navbar />
         <main>
           <Routes>
-            {/* <Route path="/" element={<BookContainer />} />
-            <Route path="/categories" element={<Categories />} /> */}
+            {/* <Route path="/" element={<Rockets />} />
+            <Route path="/dragons" element={<Dragons />} />
+            <Route path="/missions" element={<Mission />} /> */}
+            <Route path="/my-profile" element={<MyProfile />} />
           </Routes>
         </main>
       </div>
