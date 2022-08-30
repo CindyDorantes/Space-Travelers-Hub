@@ -1,19 +1,23 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles/DragonItem.module.css';
 
 const DragonItem = (props) => {
   const { dragon } = props;
 
   return (
-    <div className="dragonItem">
+    <div className={styles.dragonItem}>
       <div className="dragonImg">
-        <img src={dragon.flickr_images} alt="capsule dragon1" />
+        <img src={dragon.flickr_images} alt="capsule dragon1" className={styles.imgFlickr} />
       </div>
-      <div className="dragonInfo">
+      <div className={styles.dragonInfo}>
         <h2>{dragon.name}</h2>
-        <p>{dragon.type}</p>
-        <button type="button">Reserve Dragon</button>
+        <p className={styles.dragonType}>
+          Type:
+          {dragon.type}
+        </p>
+        <button type="button" className={styles.reserveBtn}>Reserve Dragon</button>
       </div>
     </div>
   );
