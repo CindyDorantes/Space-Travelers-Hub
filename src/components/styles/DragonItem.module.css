@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dragonItem {
+  display: flex;
+  margin: 4vh 5vw;
+}
+
+.imgFlickr {
+  height: 150px;
+}
+
+.dragonInfo {
+  padding: 0 2vw;
+}
+
+.dragonType {
+  padding: 2vh 0;
+}
+
+.reserveBtn {
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  background-color: #0290ff;
+  padding: 0.5em 1em;
+  font-size: 0.813rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+}
