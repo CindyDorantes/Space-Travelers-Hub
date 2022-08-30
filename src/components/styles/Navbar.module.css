@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
 }
 
 :root {
@@ -23,6 +22,14 @@
   border: solid 1px var(--white);
   padding: 1.75rem 4.75rem;
   background-color: #fff;
+}
+
+.headerTitle {
+  display: flex;
+}
+
+.planet {
+  height: 30px;
 }
 
 .navTitle {
