@@ -23,7 +23,7 @@
 
 .reserveBtn {
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   text-decoration: none;
   background-color: #0290ff;
   padding: 0.5em 1em;
@@ -33,4 +33,28 @@
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
+}
+
+.reserveBtn.hide {
+  display: none;
+}
+
+.cancelBtn {
+  border: 1px solid grey;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 0.5em 1em;
+  font-size: 0.813rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: grey;
+  cursor: pointer;
+}
+
+.cancelBtn.hide {
+  display: none;
 }

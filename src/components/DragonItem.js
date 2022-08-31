@@ -1,10 +1,17 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { reserveDragon } from '../redux/dragons/dragons';
 import styles from './styles/DragonItem.module.css';
 
 const DragonItem = (props) => {
   const { dragon } = props;
+  const dispatch = useDispatch();
+
+  const reserveClick = (id) => {
+    dispatch(reserveDragon(id));
+  };
 
   return (
     <div className={styles.dragonItem}>
@@ -17,7 +24,14 @@ const DragonItem = (props) => {
           Type:
           {dragon.type}
         </p>
-        <button type="button" className={styles.reserveBtn}>Reserve Dragon</button>
+        <button
+          type="button"
+          id={dragon.id}
+          onClick={(e) => reserveClick(e.target.id)}
+          className={`${styles[dragon.reserved ? 'hide' : '']} ${styles.reserveBtn}`}
+        >
+          Reserve Dragon
+        </button>        
       </div>
     </div>
   );
