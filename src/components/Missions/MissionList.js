@@ -9,6 +9,9 @@ const MissionList = () => {
   const missions = useSelector((state) => state.missions);
 
   useEffect(() => {
+    if (!missions.length) {
+
+    }
   }, []);
   return (
     <Container className='container-fluid'>
