@@ -15,7 +15,7 @@ const DragonItem = (props) => {
 
   return (
     <div className={styles.dragonItem}>
-      <div className="dragonImg">
+      <div className={styles.dragonImg}>
         <img src={dragon.flickr_images} alt="capsule dragon1" className={styles.imgFlickr} />
       </div>
       <div className={styles.dragonInfo}>
@@ -31,7 +31,15 @@ const DragonItem = (props) => {
           className={`${styles[dragon.reserved ? 'hide' : '']} ${styles.reserveBtn}`}
         >
           Reserve Dragon
-        </button>        
+        </button>
+        <button
+          type="button"
+          id={dragon.id}
+          onClick={(e) => reserveClick(e.target.id)}
+          className={`${styles[dragon.reserved ? '' : 'hide']} ${styles.cancelBtn}`}
+        >
+          Cancel Reservation
+        </button>
       </div>
     </div>
   );
