@@ -13,7 +13,7 @@ const MissionList = () => {
       dispatch(fetchMission);
     }
   }, []);
-  const joinMissionHandler = () => dispatch(joinMission());
+  const joinMissionHandler = () => dispatch(joinMission(id));
   return (
     <Container className='container-fluid'>
     <Table className='col-xl-12 col-lg-12 col-md-12 col-sm-12'>
