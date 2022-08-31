@@ -14,7 +14,7 @@ const MissionList = () => {
     }
   }, []);
   const joinMissionHandler = (id) => dispatch(joinMission(id));
-  const leaveMissionHandler = () => dispatch(leaveMission());
+  const leaveMissionHandler = (id) => dispatch(leaveMission());
   return (
     <Container className='container-fluid'>
     <Table className='col-xl-12 col-lg-12 col-md-12 col-sm-12'>
