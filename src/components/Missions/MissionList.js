@@ -10,7 +10,7 @@ const MissionList = () => {
 
   useEffect(() => {
     if (!missions.length) {
-
+      dispatch();
     }
   }, []);
   return (
