@@ -1,10 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { combineReducers } from 'redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-// import here your reducers files
+// import rocketReducer from './rockets/rockets';
+// import rocketReducer from './rockets/rockets';
+import rocketReducer from './rockets/rockets';
 
 const reducer = combineReducers({
-  // declare here you reducers
+  Rockets: rocketReducer,
 });
 
 const store = configureStore({

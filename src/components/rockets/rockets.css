@@ -1,0 +1,33 @@
+.rocketDiv {
+  display: grid;
+  grid-template-columns: 1.25fr 2.9fr;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.imgRocket {
+  display: flex;
+  height: 200px;
+  width: 200px;
+}
+
+.descDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservationBtn {
+  width: 190px;
+  height: 29px;
+  background-color: rgb(49, 137, 189);
+  border-style: none;
+  color: white;
+  border-radius: 1px;
+  font-size: 1rem;
+  margin-top: 4rem;
+}
+
+
