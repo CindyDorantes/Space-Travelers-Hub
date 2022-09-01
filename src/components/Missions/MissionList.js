@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
+import { Button } from 'react-bootstrap';
+import 'boostrap/dist/css/bootstrap.min.css';
 import { fetchMission, joinMission, leaveMission } from '../../redux/Mission';
 
 const MissionList = () => {
@@ -16,41 +18,41 @@ const MissionList = () => {
   const joinMissionHandler = (id) => dispatch(joinMission(id));
   const leaveMissionHandler = (id) => dispatch(leaveMission(id));
   return (
-    <Container className='container-fluid'>
-    <Table className='col-xl-12 col-lg-12 col-md-12 col-sm-12'>
-      <thead>
-        <tr>
-          <th>Missions</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>{' '}</th>
-        </tr>
-      </thead>
-      <tbody>
+    <Container className="container-fluid">
+      <Button>Click Here</Button>
+      <Table className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <thead>
+          <tr>
+            <th>Missions</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
           {missions.map(({
             id, name, description, reserved,
           }) => (
-          <tr className="row-wrap" key={id}>
-            <td>
-              <h3>{name}</h3>
-            </td>
-            <td>
-              <p>{description}</p>
-            </td>
-            <td>
-              {reserved && (
+            <tr className="row-wrap" key={id}>
+              <td>
+                <h3>{name}</h3>
+              </td>
+              <td>
+                <p>{description}</p>
+              </td>
+              <td>
+                {reserved && (
                 <span className="btn" type="button">
                   Active Member
                 </span>
-              )}
-              {!reserved && (
+                )}
+                {!reserved && (
                 <span className="btn" type="button">
                   Not a Member
                 </span>
-              )}
-            </td>
-            <td>
-              {!reserved && (
+                )}
+              </td>
+              <td>
+                {!reserved && (
                 <button
                   className="leave-btn"
                   size="sm"
@@ -60,8 +62,8 @@ const MissionList = () => {
                 >
                   Join Mission
                 </button>
-              )}
-              {reserved && (
+                )}
+                {reserved && (
                 <button
                   className="join-btn"
                   size="sm"
@@ -71,12 +73,12 @@ const MissionList = () => {
                 >
                   Leave Mission
                 </button>
-              )}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </Container>
   );
 };
