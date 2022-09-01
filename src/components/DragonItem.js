@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { reserveDragon } from '../redux/dragons/dragons';
+import { reserveDragon, cancelDragon } from '../redux/dragons/dragons';
 import styles from './styles/DragonItem.module.css';
 
 const DragonItem = (props) => {
@@ -11,6 +11,10 @@ const DragonItem = (props) => {
 
   const reserveClick = (id) => {
     dispatch(reserveDragon(id));
+  };
+
+  const cancelClick = (id) => {
+    dispatch(cancelDragon(id));
   };
 
   return (
@@ -24,22 +28,29 @@ const DragonItem = (props) => {
           Type:
           {dragon.type}
         </p>
-        <button
-          type="button"
-          id={dragon.id}
-          onClick={(e) => reserveClick(e.target.id)}
-          className={`${styles[dragon.reserved ? 'hide' : '']} ${styles.reserveBtn}`}
-        >
-          Reserve Dragon
-        </button>
-        <button
-          type="button"
-          id={dragon.id}
-          onClick={(e) => reserveClick(e.target.id)}
-          className={`${styles[dragon.reserved ? '' : 'hide']} ${styles.cancelBtn}`}
-        >
-          Cancel Reservation
-        </button>
+        <div>
+          {dragon.reserved
+            ? (
+              <button
+                type="button"
+                id={dragon.id}
+                onClick={(e) => cancelClick(e.target.id)}
+                className={styles.cancelBtn}
+              >
+                Cancel Reservation
+              </button>
+            )
+            : (
+              <button
+                type="button"
+                id={dragon.id}
+                onClick={(e) => reserveClick(e.target.id)}
+                className={styles.reserveBtn}
+              >
+                Reserve Dragon
+              </button>
+            )}
+        </div>
       </div>
     </div>
   );
