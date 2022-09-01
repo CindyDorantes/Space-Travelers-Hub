@@ -25,8 +25,11 @@ const DragonItem = (props) => {
       <div className={styles.dragonInfo}>
         <h2>{dragon.name}</h2>
         <p className={styles.dragonType}>
-          Type:
-          {dragon.type}
+          {dragon.reserved ? (<span className={styles.badge}>Reserved</span>) : ''}
+          <span>
+            Type:
+            {dragon.type}
+          </span>
         </p>
         <div>
           {dragon.reserved
