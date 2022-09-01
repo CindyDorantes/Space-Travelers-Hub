@@ -66,7 +66,7 @@ const MissionList = () => {
                   className="join-btn"
                   size="sm"
                   variant="outline-secondary"
-                  // type="button"
+                  type="button"
                   onClick={() => leaveMissionHandler(id)}
                 >
                   Leave Mission
