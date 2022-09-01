@@ -22,7 +22,6 @@ export const leaveMission = (id) => ({
 export const fetchMission = async (dispatch) => {
   const response = await fetch(URL);
   const missions = await response.json();
-  //   console.log(missions);
 
   dispatch(
     loadMission(
