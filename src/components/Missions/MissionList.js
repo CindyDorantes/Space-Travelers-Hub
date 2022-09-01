@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
-import { Button } from 'react-bootstrap';
-import 'boostrap/dist/css/bootstrap.min.css';
-import { fetchMission, joinMission, leaveMission } from '../../redux/Mission';
+import Button from 'react-bootstrap/Button';
+import { fetchMission, joinMission } from '../../redux/Mission';
 
 const MissionList = () => {
   const dispatch = useDispatch();
@@ -16,11 +15,10 @@ const MissionList = () => {
     }
   }, []);
   const joinMissionHandler = (id) => dispatch(joinMission(id));
-  const leaveMissionHandler = (id) => dispatch(leaveMission(id));
+  // const leaveMissionHandler = (id) => dispatch(leaveMission(id));
   return (
     <Container className="container-fluid">
-      <Button>Click Here</Button>
-      <Table className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <Table>
         <thead>
           <tr>
             <th>Missions</th>
@@ -53,7 +51,7 @@ const MissionList = () => {
               </td>
               <td>
                 {!reserved && (
-                <button
+                <Button
                   className="leave-btn"
                   size="sm"
                   variant="outline-danger"
@@ -61,18 +59,12 @@ const MissionList = () => {
                   onClick={() => joinMissionHandler(id)}
                 >
                   Join Mission
-                </button>
+                </Button>
                 )}
                 {reserved && (
-                <button
-                  className="join-btn"
-                  size="sm"
-                  variant="outline-secondary"
-                  type="button"
-                  onClick={() => leaveMissionHandler(id)}
-                >
+                <Button>
                   Leave Mission
-                </button>
+                </Button>
                 )}
               </td>
             </tr>
