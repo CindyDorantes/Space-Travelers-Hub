@@ -45,7 +45,6 @@ const rocketReducer = (state = initialState, action) => {
         if (rock.id !== action.id) {
           return rock;
         }
-
         return { ...rock, reserved: true };
       });
       return newState;
