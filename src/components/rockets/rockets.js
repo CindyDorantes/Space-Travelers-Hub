@@ -1,7 +1,7 @@
 import './rockets.css';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRockets } from '../../redux/rockets/rockets';
+import { fetchRockets, reserveRocket, cancelRocket } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -20,9 +20,11 @@ const Rockets = () => {
           <div className="descDiv">
             <h2 id={rocket.id}>{rocket.name}</h2>
             <p className="desc">
+              {rocket.reserved ? <span><button className="badgeBtn" type="button">Reserved</button></span> : null}
               {rocket.description}
             </p>
-            <button className="reservationBtn  button" type="button">Reservation</button>
+            {(!rocket.reserved) && (<button className="reservationBtn button" type="button" id={rocket.id} onClick={() => dispatch(reserveRocket(rocket.id))}>Reserve Rocket</button>)}
+            {(rocket.reserved) && (<button className="cancelBtn  button" type="button" id={rocket.id} onClick={() => dispatch(cancelRocket(rocket.id))}>Cancel Reservation</button>)}
           </div>
         </div>
       ))}
