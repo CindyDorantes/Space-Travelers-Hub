@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { fetchMission, joinMission } from '../../redux/Mission';
+import { fetchMission, joinMission, leaveMission } from '../../redux/Mission';
 
 const MissionList = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const MissionList = () => {
     }
   }, []);
   const joinMissionHandler = (id) => dispatch(joinMission(id));
-  // const leaveMissionHandler = (id) => dispatch(leaveMission(id));
+  const leaveMissionHandler = (id) => dispatch(leaveMission(id));
   return (
     <Container className="container-fluid">
       <Table>
@@ -62,7 +62,13 @@ const MissionList = () => {
                 </Button>
                 )}
                 {reserved && (
-                <Button>
+                <Button
+                  className="join-btn"
+                  size="sm"
+                  variant="outline-secondary"
+                  type="button"
+                  onClick={() => leaveMissionHandler(id)}
+                >
                   Leave Mission
                 </Button>
                 )}
