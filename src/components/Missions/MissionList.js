@@ -30,6 +30,7 @@ const MissionList = () => {
           {missions.map(({
             id, name, description, reserved,
           }) => (
+            /* eslint-disable-next-line */
             <tr className="row-wrap" key={id}>
               <td>
                 <h3>{name}</h3>
