@@ -31,13 +31,13 @@ const MyProfile = () => {
       <div className={styles.dragonDiv}>
         <h2>My Dragons</h2>
         {dragonsReserved.length ? (
-        <div>
-          {dragonsReserved.map((dragon) => (
-            <p key={dragon.id} className={styles.dragonDesc}>
-              {dragon.name}
-            </p>
-          ))}
-        </div>
+          <div>
+            {dragonsReserved.map((dragon) => (
+              <p key={dragon.id} className={styles.dragonDesc}>
+                {dragon.name}
+              </p>
+            ))}
+          </div>
         ) : <p className={styles.dragonDesc}>No Dragons</p>}
       </div>
       <div className={styles.missionsDiv}>
@@ -48,7 +48,14 @@ const MyProfile = () => {
               {
                 !data.length
                   ? <p className={styles.missionDesc}>No Missions</p>
-                  : data.map((item) => <p key={item.id} className={styles.missionDesc}>{item.name}</p>)
+                  : data.map((item) => (
+                    <p
+                      key={item.id}
+                      className={styles.missionDesc}
+                    >
+                      {item.name}
+                    </p>
+                  ))
               }
             </div>
           </div>
