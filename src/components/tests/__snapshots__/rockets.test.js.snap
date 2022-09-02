@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `<div />`;
 
 exports[`Jest Snapshot testing suite matches DOM rockets snapshot 1`] = `<div />`;
+=======
+exports[`to test the rockets elements matches DOM rockets snapshot 1`] = `<div />`;
+>>>>>>> b64589cdfc2710d1340400b4f4e70be1750c8598
