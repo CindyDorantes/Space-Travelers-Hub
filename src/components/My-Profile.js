@@ -34,6 +34,7 @@ const MyProfile = () => {
         {dragonsReserved.length ? (
           <div>
             {dragonsReserved.map((dragon) => (
+              /* eslint-disable-next-line */
               <p key={dragon.id} className={styles.dragonDesc}>
                 {dragon.name}
               </p>
@@ -45,6 +46,7 @@ const MyProfile = () => {
         {missionProfile.map(({ MissionTitle, data, id }) => (
           /* eslint-disable-next-line */
           <div key={id}>
+            /* eslint-disable-next-line */
             <h2 key={id}>{MissionTitle}</h2>
             <div className="content">
               {
