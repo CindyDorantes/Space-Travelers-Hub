@@ -9,10 +9,11 @@
 - React
 - Redux
 - React Boostrap
+- Deployed with netlify
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](#)
+[Live Demo Link](https://space-travelers-hub-1088.netlify.app/)
 
 
 ## GETTING STARTED
