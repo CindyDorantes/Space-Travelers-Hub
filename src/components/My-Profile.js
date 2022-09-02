@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styles from './styles/My-Profile.module.css';
 
 const MyProfile = () => {
   const rockets = useSelector((state) => state.Rockets);
@@ -8,47 +9,47 @@ const MyProfile = () => {
   const dragonsReserved = dragons.filter((dragon) => dragon.reserved === true);
   const missionProfile = useSelector((state) => [
     {
-      MissionTitle: 'My Mission',
+      MissionTitle: 'My Missions',
       data: state.missions.filter((mission) => mission.reserved),
     },
   ]);
 
   return (
-    <div className="myprofileContainer">
-      <div className="rocketDiv">
-        <h1>Rockets</h1>
-        <div>
-          {reserveRocket.length ? (
-            <div>
-              {reserveRocket.map((rocket) => (
-                <h2 className="rocketDesc" key={rocket.id}>
-                  {rocket.name}
-                </h2>
-              ))}
-            </div>
-          ) : null}
-        </div>
+    <div className={styles.myprofileContainer}>
+      <div className={styles.rocketDiv}>
+        <h2>My Rockets</h2>
+        {reserveRocket.length ? (
+          <div>
+            {reserveRocket.map((rocket) => (
+              <p className={styles.rocketDesc} key={rocket.id}>
+                {rocket.name}
+              </p>
+            ))}
+          </div>
+        ) : <p className={styles.rocketDesc}>No Rockets</p>}
       </div>
-      <div className="dragonDiv">
+      <div className={styles.dragonDiv}>
         <h2>My Dragons</h2>
-        <table>
+        {dragonsReserved.length ? (
+        <div>
           {dragonsReserved.map((dragon) => (
-            <tr key={dragon.id}>
-              <td>{dragon.name}</td>
-            </tr>
+            <p key={dragon.id} className={styles.dragonDesc}>
+              {dragon.name}
+            </p>
           ))}
-        </table>
+        </div>
+        ) : <p className={styles.dragonDesc}>No Dragons</p>}
       </div>
-      <div className="missionsDiv">
+      <div className={styles.missionsDiv}>
         {missionProfile.map(({ MissionTitle, data, id }) => (
           <div key={id}>
-            <h4 key={id}>{MissionTitle}</h4>
+            <h2 key={id}>{MissionTitle}</h2>
             <div className="content">
               {
-                    !data.length
-                      ? <p>No Missions</p>
-                      : data.map((item) => <p key={item.id}>{item.name}</p>)
-                  }
+                !data.length
+                  ? <p className={styles.missionDesc}>No Missions</p>
+                  : data.map((item) => <p key={item.id} className={styles.missionDesc}>{item.name}</p>)
+              }
             </div>
           </div>
         ))}
