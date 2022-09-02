@@ -9,7 +9,7 @@ describe('MyMissionList components', () => {
       .create(
         <Provider store={store}>
           <MissionList />
-        </Provider>
+        </Provider>,
       );
     expect(tree).toMatchSnapshot();
   });
