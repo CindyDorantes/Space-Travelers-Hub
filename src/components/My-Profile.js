@@ -46,8 +46,7 @@ const MyProfile = () => {
         {missionProfile.map(({ MissionTitle, data, id }) => (
           /* eslint-disable-next-line */
           <div key={id}>
-            /* eslint-disable-next-line */
-            <h2 key={id}>{MissionTitle}</h2>
+            <h2>{MissionTitle}</h2>
             <div className="content">
               {
                 !data.length
