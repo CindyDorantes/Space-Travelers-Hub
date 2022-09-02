@@ -12,10 +12,10 @@ const MyProfile = () => {
       return (
       <div>
           <div>
-            {missionProfile.map(({ MissionTitle, data }) => (
-              <div>
-                <h4>{MissionTitle}</h4>
-                <div className='content'>
+            {missionProfile.map(({ MissionTitle, data, id }) => (
+              <div key={id}>
+                <h4 key={id}>{MissionTitle}</h4>
+                <div className="content">
                   {
                     !data.length
                       ? <p>No Missions</p>
