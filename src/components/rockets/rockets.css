@@ -17,6 +17,7 @@
 .descDiv {
   display: flex;
   flex-direction: column;
+  margin-left: 0.6rem;
 }
 
 .reservationBtn {
@@ -25,7 +26,37 @@
   background-color: rgb(49, 137, 189);
   border-style: none;
   color: white;
-  border-radius: 1px;
+  border-radius: 6px;
   font-size: 1rem;
-  margin-top: 4rem;
+  margin-top: 2.7rem;
+}
+
+.cancelBtn {
+  width: 190px;
+  height: 29px;
+  background-color: rgb(222, 226, 230);
+  border-style: none;
+  color: rgb(40, 137, 161);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 2.7rem;
+}
+
+.badgeBtn {
+  width: 90px;
+  height: 19px;
+  background-color: rgb(18, 77, 77);
+  border-style: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.desc {
+  font-size: 1rem;
+  font-weight: 400;
+  font-stretch: normal;
+  line-height: 1.7rem;
+  text-align: left;
+  margin-top: 1rem;
 }
