@@ -6,6 +6,12 @@ const MyProfile = () => {
   const reserveRocket = rockets.filter((rocket) => rocket.reserved);
   const dragons = useSelector((state) => state.dragons);
   const dragonsReserved = dragons.filter((dragon) => dragon.reserved === true);
+  const missionProfile = useSelector((state) => [
+    {
+      MissionTitle: 'My Mission',
+      data: state.missions.filter((mission) => mission.reserved),
+    },
+  ]);
 
   return (
     <div className="myprofileContainer">
@@ -32,6 +38,20 @@ const MyProfile = () => {
             </tr>
           ))}
         </table>
+      </div>
+      <div className="missionsDiv">
+        {missionProfile.map(({ MissionTitle, data, id }) => (
+          <div key={id}>
+            <h4 key={id}>{MissionTitle}</h4>
+            <div className="content">
+              {
+                    !data.length
+                      ? <p>No Missions</p>
+                      : data.map((item) => <p key={item.id}>{item.name}</p>)
+                  }
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
