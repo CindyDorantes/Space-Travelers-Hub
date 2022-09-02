@@ -15,6 +15,7 @@ const Rockets = () => {
   return (
     <div>
       {rockets.map((rocket) => (
+        /*eslint-disable-next-line*/
         <div className="rocketDiv" key={rocket.id}>
           <div className="imgRocket"><img src={rocket.images[0]} alt={rocket.name} /></div>
           <div className="descDiv">
