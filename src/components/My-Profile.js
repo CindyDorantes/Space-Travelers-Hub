@@ -8,7 +8,7 @@ const MyProfile = () => {
   const dragonsReserved = dragons.filter((dragon) => dragon.reserved === true);
 
   return (
-    <div className="myprofileContainer">  
+    <div className="myprofileContainer">
       <div className="rocketDiv">
         <h1>Rockets</h1>
         <div>
@@ -22,7 +22,7 @@ const MyProfile = () => {
             </div>
           ) : null}
         </div>
-      </div>        
+      </div>
       <div className="dragonDiv">
         <h2>My Dragons</h2>
         <table>
