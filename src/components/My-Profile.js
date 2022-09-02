@@ -21,6 +21,7 @@ const MyProfile = () => {
         {reserveRocket.length ? (
           <div>
             {reserveRocket.map((rocket) => (
+              /* eslint-disable-next-line */
               <p className={styles.rocketDesc} key={rocket.id}>
                 {rocket.name}
               </p>
@@ -33,6 +34,7 @@ const MyProfile = () => {
         {dragonsReserved.length ? (
           <div>
             {dragonsReserved.map((dragon) => (
+              /* eslint-disable-next-line */
               <p key={dragon.id} className={styles.dragonDesc}>
                 {dragon.name}
               </p>
@@ -42,14 +44,16 @@ const MyProfile = () => {
       </div>
       <div className={styles.missionsDiv}>
         {missionProfile.map(({ MissionTitle, data, id }) => (
+          /* eslint-disable-next-line */
           <div key={id}>
-            <h2 key={id}>{MissionTitle}</h2>
+            <h2>{MissionTitle}</h2>
             <div className="content">
               {
                 !data.length
                   ? <p className={styles.missionDesc}>No Missions</p>
                   : data.map((item) => (
                     <p
+                    /* eslint-disable-next-line */
                       key={item.id}
                       className={styles.missionDesc}
                     >

@@ -5,7 +5,7 @@ import Rockets from '../rockets/rockets';
 import store from '../../redux/configureStore';
 import rocketReducer, { fetchRockets } from '../../redux/rockets/rockets';
 
-describe('to test the rockets elements', () => {
+describe('Jest Snapshot testing suite', () => {
   it('matches DOM rockets snapshot', () => {
     const rocketDiv = renderer
       .create(
