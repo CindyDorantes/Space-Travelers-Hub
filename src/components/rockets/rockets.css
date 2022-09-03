@@ -10,8 +10,11 @@
 
 .imgRocket {
   display: flex;
-  height: 200px;
-  width: 200px;
+  width: 290px;
+}
+
+.imgRocket > img {
+  width: 100%;
 }
 
 .descDiv {
@@ -43,13 +46,15 @@
 }
 
 .badgeBtn {
-  width: 90px;
-  height: 19px;
-  background-color: rgb(18, 77, 77);
-  border-style: none;
-  color: white;
-  border-radius: 6px;
-  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  padding: 0.3em 0.5em;
+  margin-right: 1em;
+  background-color: #b82e18;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 0.7rem;
 }
 
 .desc {

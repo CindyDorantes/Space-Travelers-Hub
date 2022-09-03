@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { fetchMission, joinMission, leaveMission } from '../../redux/Mission';
+import { fetchMission, joinMission, leaveMission } from '../../redux/missions/Mission';
 
 const MissionList = () => {
   const dispatch = useDispatch();
